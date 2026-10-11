@@ -1,0 +1,56 @@
+{
+  "dataset": "generated",
+  "data": "data/generated",
+  "output": "outputs/main",
+  "remote_root": "",
+  "checkpoint": "",
+  "resume": "",
+  "device": "auto",
+  "steps": 50,
+  "batch_size": 16,
+  "replicas": 4,
+  "input_dim": 64,
+  "hidden_dim": 128,
+  "classes": 10,
+  "samples": 1024,
+  "dropout": 0.0,
+  "lr": 0.001,
+  "seed": 2026,
+  "threads": 2,
+  "limit": 0,
+  "chunk_bytes": 65536,
+  "gpu_cache": false,
+  "risk_scores": [
+    0.05,
+    0.2,
+    0.35,
+    0.7
+  ],
+  "risk_window_steps": 10,
+  "fixed_risk": 0.35,
+  "interval_steps": [
+    20,
+    10,
+    5,
+    2
+  ],
+  "max_chain": 4,
+  "chain_ratio": 2.0,
+  "failure": "none",
+  "failures": [
+    "process",
+    "gpu",
+    "nvme",
+    "node",
+    "dual_node"
+  ],
+  "variant": "checkpointmesh",
+  "variants": [
+    "full",
+    "local_delta",
+    "fixed_policy",
+    "no_parity",
+    "no_compaction",
+    "checkpointmesh"
+  ]
+}
