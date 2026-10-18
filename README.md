@@ -42,13 +42,13 @@ python -m checkpointmesh evaluate --config configs/reproduce.json --checkpoint o
 
 ```bash
 python -m checkpointmesh compare --config configs/reproduce.json --output outputs/comparison
-python -m checkpointmesh plot --config configs/reproduce.json --output outputs/comparison
+python -m checkpointmesh plot --config configs/reproduce.json --output outputs/checkpointmesh
 ```
 
 ## Outputs
 
-Run directories contain `training.csv`, `checkpoint_metrics.csv`, `metrics.json`, `model.pt`, `evaluation.json` as produced by the corresponding steps. `config.json` records effective settings. Comparison results are in `outputs/comparison/comparison.csv`; plotting reads those computed files.
+Run directories contain `training.csv`, `checkpoint_metrics.csv`, `metrics.json`, `model.pt`, `evaluation.json` as produced by the corresponding steps. `config.json` records effective settings. Comparison results are in `outputs/comparison/comparison.csv`. The plot command reads the main run's `checkpoint_metrics.csv` and writes `outputs/checkpointmesh/checkpoint_cost.pdf`.
 
 ## Verification
 
-Source checks used Python 3.13.5. Installed dependency metadata: numpy 2.1.3, torch 2.7.1+cu118, torchvision 0.22.1, matplotlib 3.10.0. Python AST, configuration files, CLI parser definitions and source input/output paths were checked without invoking command handlers. Training, full evaluation and CI were not run for this review.
+Source checks used Python 3.13.5. Installed dependency metadata: numpy 2.1.3, torch 2.7.1+cu118, torchvision 0.22.1, matplotlib 3.10.0. Python AST, configuration files, CLI parser definitions and source input/output paths were checked without invoking command handlers. Training and full evaluation were not run for this review. The GitHub Actions workflow checks packaging and source code.
