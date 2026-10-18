@@ -74,3 +74,16 @@ One parity symbol is XOR. Two parity symbols use systematic GF(256) coding and r
 The backend compacts by chain length and byte amplification. It does not infer a distributed restore-time service objective, emulate GPU/node hardware failures, or implement peer TCP transport. Directory fault injection and local timings describe the supplied backend. Checkpoints use Python serialization for non-tensor metadata and should be loaded only from trusted runs.
 
 Data, weights and generated outputs are ignored by Git. Run directories store the effective `config.json`, CSV measurements and JSON metrics. Plots read the generated measurement files.
+
+## Registered compact reproduction setting
+
+CPU-generated classification, four synchronized replicas and a prescribed risk trace. Separate directories are logical fault domains; recovery equality and actual local storage bytes/timing are measured, without claiming physical multi-node durability.
+
+Run from the repository root after installation. The following commands use the registered setting; they are provided for execution and have not been run as part of the source review.
+
+```bash
+python -m checkpointmesh prepare --config configs/reproduce.json
+python -m checkpointmesh compare --config configs/reproduce.json --output outputs/reproduce_comparison
+```
+
+This setting needs no external dataset or pretrained weights. Generated inputs and declared fault/shift laws define the finite task; reported quantities retain that provenance.
