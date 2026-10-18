@@ -319,7 +319,7 @@ class CheckpointStore:
             domain = copy["domain"]
             if (
                 failure == "process"
-                and tier == 0
+                and tier in (0, 1)
                 or failure == "gpu"
                 and tier == 0
                 or failure == "nvme"
